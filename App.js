@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import CustomButton from './components/CustomButton';
+import Home from "./pages/Home";
 
 export default function App() {
     const [text, setText] = useState('Rien');
@@ -10,18 +11,19 @@ export default function App() {
     }
 
     return (
-        <View style={styles.container}>
-            <Text>J'ai cliqué sur {text}</Text>
-            <CustomButton
-                text={'MARRON'}
-                changeText={changeText}
-                color={'brown'}
-            />
-            <CustomButton
-                text={'NOIR'}
-                changeText={changeText}
-                color={'black'}
-            />
+        <View>
+            <Home />
+            {/*<Text>J'ai cliqué sur {text}</Text>*/}
+            {/*<CustomButton*/}
+            {/*    text={'MARRON'}*/}
+            {/*    changeText={changeText}*/}
+            {/*    color={'brown'}*/}
+            {/*/>*/}
+            {/*<CustomButton*/}
+            {/*    text={'NOIR'}*/}
+            {/*    changeText={changeText}*/}
+            {/*    color={'black'}*/}
+            {/*/>*/}
         </View>
     );
 }
