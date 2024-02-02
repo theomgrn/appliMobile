@@ -1,41 +1,61 @@
-import React, {useEffect, useState} from 'react';
-import {FlatList, Image, StyleSheet, Text, View} from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export default function Home() {
+export default function Home({ navigation }) {
     const [data, setData] = useState([]);
+    const [nextPage, setNextPage] = useState('https://pokeapi.co/api/v2/pokemon?limit=20');
+    const [loading, setLoading] = useState(true);
+    const [imageLoaded, setImageLoaded] = useState(false);
 
-    const getData = async () => {
+    const handleImageLoad = () => {
+        setImageLoaded(true);
+    };
+
+
+    const getData = async (url) => {
         try {
-            const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20');
+            const resp = await fetch(url);
             const responseData = await resp.json();
-
             const detailedData = await Promise.all(
                 responseData.results.map(async (pokemon) => {
                     const detailResp = await fetch(pokemon.url);
                     return detailResp.json();
                 })
             );
-
-            setData(detailedData);
+            setData((prevData) => [...prevData, ...detailedData]);
+            setNextPage(responseData.next);
+            setLoading(false);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
 
-
     useEffect(() => {
-        getData().then(() => console.log('data fetched'));
+        getData(nextPage);
     }, []);
 
+
     const renderItem = ({ item }) => (
-        <View style={styles.cardContainer}>
+        <TouchableOpacity style={styles.cardContainer} onPress={() => navigation.navigate('Characteristics', { pokemon: item })}>
             <View style={styles.cardContent}>
-                <Image style={styles.image} source={{ uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.id}.png` }} />
-                {/*<Image style={styles.imageLoading} source={require('../assets/pokeball.png')} />*/}
+                {!imageLoaded && (
+                    <Image style={styles.imageLoading} source={require('../assets/pokeball.png')} />
+                )}
+                <Image
+                    style={styles.image}
+                    source={{ uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${item.id}.png` }}
+                    onLoad={handleImageLoad}
+                />
                 <Text style={styles.name}>{item.name}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     );
+    const handleEndReached = () => {
+        if (!loading && nextPage) {
+            setLoading(true);
+            getData(nextPage);
+        }
+    };
 
     return (
         <View style={styles.container}>
@@ -45,7 +65,9 @@ export default function Home() {
             </View>
             <FlatList
                 data={data}
-                keyExtractor={(item) => item.id} // Use ID as key
+                keyExtractor={(item) => item.id.toString()} // Use ID as key
+                onEndReached={handleEndReached}
+                onEndReachedThreshold={0.1}
                 renderItem={renderItem}
                 numColumns={2}
             />
@@ -53,11 +75,18 @@ export default function Home() {
     );
 }
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#f3f3f3',
+    },
     banner: {
-        paddingTop: 60,
+        // marginTop: 60,
         backgroundColor: '#f3f3f3',
         padding: 16,
         borderRadius: 8,
+    },
+    listMargin: {
+        paddingBottom: 100,
     },
     pokedexTitle: {
         width: 300,
