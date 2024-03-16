@@ -1,29 +1,71 @@
-import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {Button} from "@rneui/base";
+import StorageModalButton from "./storageModalButton";
 
 export default function PokemonDetail({ route }) {
     const { pokemon } = route.params;
-    const [imageLoaded, setImageLoaded] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false)
+    const [openModal, setOpenModal] = useState(false)
+    const localStorageKeys = ['Team1', 'Team2', 'Team3', 'Team4', 'Team5', 'Team6'];
 
     const handleImageLoad = () => {
         setImageLoaded(true);
     };
 
     const renderHealthBar = (hp) => {
-        const healthPercentage = (hp / 100) * 100; // Assuming HP values range from 0 to 100
+        let healthPercentage = (hp / 100) * 100;
+        if (healthPercentage > 60) {
+            healthPercentage = 85;
+        }
         return (
-            <View style={styles.testest}>
+            <View style={styles.barreVie}>
                 <View style={[styles.healthBar, { width: healthPercentage + '%' }]} />
                 <Text style={styles.healthText}>{hp} HP</Text>
                 <View style={styles.healthBarContainer}>
-            </View>
+                </View>
             </View>
         );
     };
 
+    const modal = (keysArray) => {
+        return (
+            <View style={styles.modalBackground}>
+                <View style={styles.modalContainer}>
+                    <Text style={styles.modalTitle}>Manage your team</Text>
+                    <View style={styles.modalButtonsContainer}>
+                        {
+                            keysArray.map((key) => {
+                                return (
+                                    <StorageModalButton
+                                        currentPokemon={pokemon}
+                                        currentKey={key}
+                                    />
+                                )
+                            })
+                        }
+
+                    </View>
+                    <Button
+                        title={'Close'}
+                        onPress={() => setOpenModal(!openModal)}
+                        buttonStyle={styles.modalCloseButton}
+                    />
+                </View>
+            </View>
+        )
+    }
 
     return (
         <View style={styles.container}>
+            <Button
+                title={'Add to team'}
+                buttonStyle={styles.teamButton}
+                containerStyle={styles.teamButtonContainer}
+                onPress={() => {
+                    setOpenModal(!openModal)
+                }}
+            />
             <View style={styles.header}>
                 <View style={styles.pokeImg}>
                     <Image
@@ -50,6 +92,9 @@ export default function PokemonDetail({ route }) {
             </View>
             <Text>Weight: {pokemon.weight}</Text>
             <Text>Height: {pokemon.height}</Text>
+            {
+                openModal && modal(localStorageKeys)
+            }
         </View>
     );
 }
@@ -103,7 +148,6 @@ const getTypeColor = (type) => {
     }
 };
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -146,7 +190,7 @@ const styles = StyleSheet.create({
         color: '#fff',
         marginBottom: 16,
     },
-    testest: {
+    barreVie: {
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'row',
@@ -168,5 +212,52 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         color: '#333',
+    },
+    teamButtonContainer: {
+        position: 'absolute',
+        top: 0,
+        width: '100%',
+    },
+    teamButton: {
+        backgroundColor: '#E4000F',
+        borderRadius: 10,
+        marginTop: 20,
+        padding: 20,
+    },
+    modalBackground: {
+        backgroundColor: 'rgba(217,217,217,0.7)',
+        height: '100%',
+        width: '100%',
+        position: 'absolute',
+        zIndex: 100,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    modalContainer: {
+        backgroundColor: '#fff',
+        width: '80%',
+        position: 'absolute',
+        zIndex: 110,
+        borderRadius: 20,
+        padding: 20,
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 25
+    },
+    modalTitle: {
+        color: '#4C666B',
+        fontWeight: '600',
+        fontSize: 20,
+    },
+    modalButtonsContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 10,
+        width: '100%'
+    },
+    modalCloseButton: {
+        borderRadius: 5,
+        backgroundColor: '#E4000F'
     },
 });

@@ -6,11 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="29202320-f0c4-4f1a-8f56-577afb8ef62e" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../.idea/Dev.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/refresh.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/PokemonCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/storageModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/storageSetting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/PokemonDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PokemonDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Team.js" afterDir="false" />
+    </list>
+    <list id="0929ec4a-cf19-4eee-be4e-4d1fd12f69d6" name="Changes by evangruchot" comment="">
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/PokemonDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/PokemonDetail.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +41,43 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/components/PokemonDetail.js">
+      <ranges>
+        <range start1="0" end1="2" start2="0" end2="4" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="5" end1="6" start2="7" end2="10" changelist="0929ec4a-cf19-4eee-be4e-4d1fd12f69d6" />
+        <range start1="12" end1="13" start2="16" end2="20" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="14" end1="15" start2="21" end2="22" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="18" end1="19" start2="25" end2="26" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="23" end1="23" start2="30" end2="57" changelist="0929ec4a-cf19-4eee-be4e-4d1fd12f69d6" />
+        <range start1="26" end1="26" start2="60" end2="68" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="52" end1="52" start2="94" end2="97" changelist="0929ec4a-cf19-4eee-be4e-4d1fd12f69d6" />
+        <range start1="105" end1="106" start2="150" end2="150" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="148" end1="149" start2="192" end2="193" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="171" end1="171" start2="215" end2="262" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="172" end1="173" start2="263" end2="263" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/App.js">
+      <ranges>
+        <range start1="0" end1="2" start2="0" end2="2" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="6" end1="7" start2="6" end2="7" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="12" end1="12" start2="12" end2="13" changelist="0929ec4a-cf19-4eee-be4e-4d1fd12f69d6" />
+        <range start1="14" end1="15" start2="15" end2="15" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="26" end1="27" start2="26" end2="27" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="29" end1="30" start2="29" end2="30" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="31" end1="32" start2="31" end2="73" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="41" end1="42" start2="82" end2="83" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="43" end1="44" start2="84" end2="85" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="47" end1="48" start2="88" end2="90" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="49" end1="50" start2="91" end2="93" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="51" end1="52" start2="94" end2="96" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="53" end1="54" start2="97" end2="99" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="55" end1="57" start2="100" end2="101" changelist="29202320-f0c4-4f1a-8f56-577afb8ef62e" />
+        <range start1="64" end1="68" start2="108" end2="112" changelist="0929ec4a-cf19-4eee-be4e-4d1fd12f69d6" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -38,26 +90,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Notification.DisplayName-DoNotAsk-Vcs Notifications&quot;: &quot;VCS notifications&quot;,
-    &quot;Notification.DoNotAsk-Vcs Notifications&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/theo/Documents/Dev/appliMobile&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/PhpStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Notification.DisplayName-DoNotAsk-Vcs Notifications": "VCS notifications",
+    "Notification.DoNotAsk-Vcs Notifications": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/Users/theo/Documents/Dev/appliMobile/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "terminal",
+    "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$" />
@@ -84,7 +140,11 @@
       <workItem from="1706253063430" duration="7401000" />
       <workItem from="1706260833362" duration="9442000" />
       <workItem from="1706857627800" duration="5834000" />
-      <workItem from="1706863753365" duration="5274000" />
+      <workItem from="1706863753365" duration="12855000" />
+      <workItem from="1709645217595" duration="6709000" />
+      <workItem from="1710280417263" duration="10577000" />
+      <workItem from="1710510982151" duration="1000" />
+      <workItem from="1710599743112" duration="13028000" />
     </task>
     <servers />
   </component>

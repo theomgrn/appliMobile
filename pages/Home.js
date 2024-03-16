@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f3f3f3',
     },
     banner: {
-        // marginTop: 60,
+        marginTop: 60,
         backgroundColor: '#f3f3f3',
         padding: 16,
         borderRadius: 8,
